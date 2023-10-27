@@ -343,11 +343,25 @@ img {
   background-color: var(--darkBlue);
   color: var(--lightBlue);
   text-align: center;
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: stretch;
+  gap: 0;
+}
+.bioCard__header {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
   gap: 0;
 }
 .bioCard__img {
@@ -358,22 +372,49 @@ img {
   width: 11rem;
   align-self: center;
   margin-bottom: 1.5rem;
+  filter: saturate(0);
 }
 .bioCard__h1 {
+  background: linear-gradient(to bottom, var(--pink) 0%, var(--orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
   line-height: 1;
   margin-top: 0;
   margin-bottom: 0.75rem;
 }
 .bioCard__h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
   line-height: 1;
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
+.bioCard__hr {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-color: var(--lightBlue);
+}
 .bioCard__p {
   margin-top: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
+  line-height: normal;
+}
+.bioCard__footer {
+  position: relative;
+}
+.bioCard__footer::before {
+  content: "";
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+  right: -2rem;
+  bottom: -3.875rem;
+  background: linear-gradient(-187deg, var(--orange) 0%, var(--pink) 60%);
+  transform: skewY(7deg);
 }
 .bioCard__ul {
+  position: relative;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -383,6 +424,32 @@ img {
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+}
+.bioCard__a {
+  width: 2rem;
+  height: 2rem;
+  background: var(--white);
+  border-radius: 50rem;
+  display: inline-flex;
+}
+.bioCard__a svg {
+  margin: auto;
+  height: 50%;
+}
+.bioCard__a svg path {
+  fill: var(--pink);
+}
+.bioCard__a--alt {
+  background: linear-gradient(to bottom, var(--lightGreen) 0%, var(--darkGreen) 100%);
+  border-radius: 50rem;
+  display: inline-flex;
+}
+.bioCard__a--alt svg {
+  margin: auto;
+  height: 75%;
+}
+.bioCard__a--alt svg path {
+  fill: var(--black);
 }
 
 /*# sourceMappingURL=main.css.map */
